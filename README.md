@@ -1,3 +1,14 @@
+# A web3 Vue application to facilitate of data to and from [Web3 Storage](https://web3.storage/)
+
+## Prerequisites
+
+* Node.js v18 or higher
+* NPM 
+* Text Editor
+* web3.storage account
+* [web3 CLI](https://web3.storage/docs/w3cli/)
+   
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
