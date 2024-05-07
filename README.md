@@ -9,14 +9,14 @@
 * [web3 CLI](https://web3.storage/docs/w3cli/)
 
 ## Setup
-* w3 login <email account>
-* w3 space ls
-* w3 space use <space key>
-* w3 key create
-* w3 delegation create <did:key:...>
-* git clone repo
-* npm install
-* npm run dev
+* `w3 login <email account>`
+* `w3 space ls`
+* `w3 space use <space key>`
+* `w3 key create`
+* `w3 delegation create <did:key:...> --base64`
+* `Clone the repo and cd upfile-vue
+* `npm install`
+* `npm run dev`
 -------------------------------------------------
 # Nuxt 3 Minimal Starter
 
