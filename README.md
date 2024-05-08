@@ -14,9 +14,12 @@
 * `w3 space use <space key>`
 * `w3 key create`
 * `w3 delegation create <did:key:...> --base64`
-* `Clone the repo and cd upfile-vue
+* Copy the key and the proof into a .env file
+* Store the .env in the root dir 
+* Clone the repo and cd upfile-vue
 * `npm install`
 * `npm run dev`
+* 
 -------------------------------------------------
 # Nuxt 3 Minimal Starter
 
