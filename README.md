@@ -9,6 +9,7 @@
 * [web3 CLI](https://web3.storage/docs/w3cli/)
 
 ## Setup
+* Clone the repo and cd upfile-vue
 * `w3 login <email account>`
 * `w3 space ls`
 * `w3 space use <space key>`
@@ -16,10 +17,7 @@
 * `w3 delegation create <did:key:...> --base64`
 *  Save the output - both key and proof - to a .env file and save it to the project root.
 > [!IMPORTANT] You will need to repeat this step on any device you configure to run this app.
-> The .env file should _never_ be committed to the repo. If you do, anyone with access to your repo will be able to access your W3.Storage > account and access your files.
-* Copy the key and the proof into a .env file
-* Store the .env in the root dir 
-* Clone the repo and cd upfile-vue
+> The .env file should _never_ be committed to the repo. If you do, anyone with access to your repo will be able to access your W3.Storage account and access your files.
 * `npm install`
 * `npm run dev`
 * 
