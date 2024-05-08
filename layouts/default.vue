@@ -69,10 +69,10 @@
               </ul>
             </li>
             <li class="mt-auto">
-              <NuxtLink href="/settings" class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-indigo-700 hover:text-white">
+              <!-- <NuxtLink href="/settings" class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-indigo-700 hover:text-white">
                 <Cog6ToothIcon class="h-6 w-6 shrink-0 text-indigo-200 group-hover:text-white" aria-hidden="true" />
                 Settings
-              </NuxtLink>
+              </NuxtLink> -->
             </li>
           </ul>
         </nav>
@@ -90,12 +90,12 @@
         <div class="h-6 w-px bg-gray-900/10 lg:hidden" aria-hidden="true" />
 
         <div class="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
-          <form class="relative flex flex-1" action="#" method="GET">
+<!--           <form class="relative flex flex-1" action="#" method="GET">
             <label for="search-field" class="sr-only">Search</label>
             <MagnifyingGlassIcon class="pointer-events-none absolute inset-y-0 left-0 h-full w-5 text-gray-400" aria-hidden="true" />
             <input id="search-field" class="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm" placeholder="Search..." type="search" name="search" />
           </form>
-          <div class="flex items-center gap-x-4 lg:gap-x-6">
+ -->          <div class="flex items-center gap-x-4 lg:gap-x-6">
             <button type="button" class="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
               <span class="sr-only">View notifications</span>
               <BellIcon class="h-6 w-6" aria-hidden="true" />
@@ -105,7 +105,7 @@
             <div class="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-900/10" aria-hidden="true" />
 
             <!-- Profile dropdown -->
-            <Menu as="div" class="relative">
+<!--             <Menu as="div" class="relative">
               <MenuButton class="-m-1.5 flex items-center p-1.5">
                 <span class="sr-only">Open user menu</span>
                 <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
@@ -121,7 +121,7 @@
                   </MenuItem>
                 </MenuItems>
               </transition>
-            </Menu>
+            </Menu> -->
           </div>
         </div>
       </div>
@@ -162,13 +162,8 @@ import {
 import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
 
 const navigation = [
-  { name: 'Spaces', href: '#', icon: HomeIcon, current: true },
-  { name: 'Team', href: '#', icon: UsersIcon, current: false },
+  { name: 'File Listing and Upload', href: '#', icon: HomeIcon, current: true },
+  
 ]
-const userNavigation = [
-  { name: 'Your profile', href: '/profile' },
-  { name: 'Sign out', href: '/signout' },
-]
-
 const sidebarOpen = ref(false)
 </script>
