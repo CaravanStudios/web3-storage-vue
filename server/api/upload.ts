@@ -3,6 +3,9 @@ import { StoreMemory } from '@web3-storage/w3up-client/stores/memory'
 import { importDAG } from '@ucanto/core/delegation'
 import { CarReader } from '@ipld/car'
 import * as Signer from '@ucanto/principal/ed25519'
+import { UploadListSuccess } from '@web3-storage/w3up-client/types'
+import { UploadList } from '@web3-storage/w3up-client/types'
+
 
 export default defineEventHandler(async (event): Promise<void> => {
 
@@ -20,11 +23,25 @@ export default defineEventHandler(async (event): Promise<void> => {
         const proof = await parseProof(process.env.PROOF ?? '')
         const space = await client.addSpace(proof)
         await client.setCurrentSpace(space.did())
+        console.log("Space Key: ", space.did());
 
         // convert body into binary blob
-        const blob = new Blob([data.data], { type: data.type });;
+        //console.log("data: ", data);
+        const blob = new Blob([data.data], { type: data.type });
         const result = await client.uploadFile(blob);
-        return result;
+        console.log("lets hope this isn't too crazy", result)
+        // fetch the CIDs
+        const uploadListResult = client.capability.upload.list({ cursor: '', size: 25 })
+        //fetch metadata
+        const files = await Promise.all(
+            uploadListResult.upload.list.map(async (upload) => {
+              const metadata = await client.getMetadata(upload.cid)
+              return { cid: upload.cid, metadata }
+            })
+          )
+          console.log("These are them: ",files)
+          return files
+
     }
     // returm event.res
 
