@@ -59,7 +59,7 @@ const onChange = ($event: Event) => {
             })
         } catch (error) {
             console.error(error);
-            oast.add({ title: "Upload failed!"})
+            toast.add({ title: "Upload failed!"})
         } finally {
             form.value?.reset();
             file.value = null;
