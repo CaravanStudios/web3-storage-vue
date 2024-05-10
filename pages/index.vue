@@ -1,5 +1,5 @@
 <template>
-    <FileUploader/>
+    <FileTable/>
 </template>
 <script>
     export default {
