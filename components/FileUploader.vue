@@ -33,6 +33,9 @@ const file = ref<File | null>();
 const form = ref<HTMLFormElement>();
 const loading = ref<boolean>(false);
 const toast = useToast();
+const emit = defineEmits<{
+    complete: [cid: string]
+}>()
 const onChange = ($event: Event) => {
 
     loading.value = true;
@@ -40,9 +43,6 @@ const onChange = ($event: Event) => {
     const target = $event.target as HTMLInputElement;
     let formData = new FormData();
 
-    const emit = defineEmits<{
-        complete: [cid: string]
-    }>()
 
     if (target && target.files) {
 
@@ -56,7 +56,7 @@ const onChange = ($event: Event) => {
             }).then((resp) => {
                 loading.value = false;
                 toast.add({ title: "Upload successful!" })
-                this.$emit('fileUploaded');
+                emit('complete');
             })
         } catch (error) {
             console.error(error);
