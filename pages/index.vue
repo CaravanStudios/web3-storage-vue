@@ -23,12 +23,15 @@ import { ref, onMounted } from 'vue'
 const files = ref<Array>([]);
 const refreshFiles = () => {
     return fetch('/api/list')
-        .then(res => {
-            files.value = res.data;
+        .then(res => res.json())
+        .then(data => {
+            files.value = data.files.results;
         })
         .catch(err => {
             console.error(err);
         });
 }
-onMounted(() => refreshFiles);
+onMounted(() => {
+    refreshFiles()
+});
 </script>

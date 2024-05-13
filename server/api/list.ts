@@ -6,9 +6,6 @@ import * as Signer from '@ucanto/principal/ed25519'
 
 
 export default defineEventHandler(async (event: H3Event): Promise<void> => {
-
-    const body = await readMultipartFormData(event);
-    const data = body[0];
     // Load client with specific private key
     try {
         const principal = Signer.parse(process.env.KEY ?? '')
@@ -19,8 +16,6 @@ export default defineEventHandler(async (event: H3Event): Promise<void> => {
         const space = await client.addSpace(proof)
         await client.setCurrentSpace(space.did())
 
-        // convert body into binary blob
-        const blob = new Blob([data.data], { type: data.type });;
         const result = await client.capability.upload.list({ cursor: '', size: 25 })
         return { files: result };
     } catch (e) {
@@ -41,14 +36,3 @@ async function parseProof(data: String) {
     }
     return importDAG(blocks)
 }
-
-/** @param {string} data Base64 encoded CAR file */
-async function parseProof(data: String) {
-    const blocks = []
-    const reader = await CarReader.fromBytes(Buffer.from(data, 'base64'))
-    for await (const block of reader.blocks()) {
-        blocks.push(block)
-    }
-    return importDAG(blocks)
-}
-

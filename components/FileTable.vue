@@ -15,9 +15,9 @@
                     <tbody class="divide-y divide-gray-200">
                         <tr v-for="file in files" :key="file.cid">
                             <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                                {{ file.cid }}</td>
+                                {{ file.root["/"] }}</td>
                             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                {{ file.timestamp }}</td>
+                                {{ file.updatedAt }}</td>
                         </tr>
                     </tbody>
                 </table>
