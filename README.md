@@ -16,8 +16,15 @@
 * `w3 key create`
 * `w3 delegation create <did:key:...> --base64`
 *  Save the output - both key and proof - to a .env file and save it to the project root.
+*  The format is as follows, as found within the `.env.example` file:
+*  KEY=SOMEKEYHERE
+*  PROOF=`SOMEMULTLINESTRINGTHATSREALLYLONGHERE`
+*  The KEY value is second line of output from the `w3 key create` command.
+*  The PROOF value is the long, BASE64 output from the `w3 delegation create <did:key:...> --base64` command.
+* 
 > [!IMPORTANT] You will need to repeat this step on any device you configure to run this app.
 > The .env file should _never_ be committed to the repo. If you do, anyone with access to your repo will be able to access your W3.Storage account and access your files.
+* 
 * `npm install`
 * `npm run dev`
 * 
