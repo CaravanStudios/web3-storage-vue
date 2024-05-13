@@ -1,4 +1,4 @@
-# A web3 Vue application to facilitate of data to and from [Web3 Storage](https://web3.storage/)
+# A web 3 sandbox project showcasing basic IPFS upload and listing functionality using Web.storage/Filecoin and Vue.js.
 
 ## Prerequisites
 
