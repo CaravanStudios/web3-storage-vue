@@ -54,8 +54,8 @@ Once all of the requirements are taken care of the following steps are required 
 
 Save the output - both key and proof - to a .env file and save it to the project root. There is a sample `.env.example` within the sanbox code repository. The format is as follows, as found within the `.env.example` file:
 
-KEY=SOMEKEYHERE
-PROOF='SOMEMULTLINESTRINGTHATSREALLYLONGHERE'
+> KEY=SOMEKEYHERE
+> PROOF='SOMEMULTLINESTRINGTHATSREALLYLONGHERE'
 
 The KEY value is second line of output from the `w3 key create` command. The PROOF value is the long, BASE64 output from the `w3 delegation create <did:key:...> --base64` command.
  
