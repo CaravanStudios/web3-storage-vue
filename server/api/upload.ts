@@ -27,8 +27,9 @@ export default defineEventHandler(async (event: H3Event): Promise<void> => {
     return { cid: result};
     } catch (e) {
         setResponseStatus(500);
+        console.error(e)
         return {
-            message: e.getMessage()
+            message: e.message
         }
     }
 
