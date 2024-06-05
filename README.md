@@ -19,11 +19,13 @@ To use this sandbox, the following skills and technology are required or good to
 * [web3.storage account](https://web3.storage/)
 * [web3 CLI](https://web3.storage/docs/w3cli/)
 
-Let's start by ensuring that the required technology has been installed on your computer. If you are unsure about the current status of Node and NPM on your computer, open your Terminal application and type `node`. This should result in a 'Welcome to Node.js' message, such as:
+Let's start by ensuring that the required technology has been installed on your computer. If you are unsure about the current status of Node and NPM on your computer, open your Terminal application and type `node -v`. If Node is installed this should result in a printout of your current version of Node, such as:
 
-'Welcome to Node.js v18.18.2.'
+'v18.18.2'
 
-Exit Node, typically by using 'ctrl-z' on your keyboard, and type `npm`. If NPM is installed a listing of all available NPM commands will be shown. Should either of these steps fail, the quickest way to install both is to use Node.js's supplied package manager which includes both Node.js and NPM. There are options available for Windows, Mac OSX, Linux and AIX. It is recommended that the latest version of each is installed.
+Then type `npm -v`. If NPM is another numeric print, ex. '10.8.1', will appear. 
+
+Should either of these steps fail, the quickest way to install both is to use Node.js's supplied package manager which includes both Node.js and NPM. There are options available for Windows, Mac OSX, Linux and AIX. It is recommended that the latest version of each is installed.
 
 - [https://nodejs.org/en/download](https://nodejs.org/en/download)
 
@@ -50,17 +52,17 @@ Once all of the requirements are taken care of the following steps are required 
 * `w3 space ls` - lists your spaces within web3.storage.
 * `w3 space use <space key>` - chooses a space to recieve the files being uploaded via the sandbox.
 * `w3 key create` - creates a local web3.storage key.
-* `w3 delegation create <did:key:...> --base64` - tells web3.storage that the client using the key you just made is authorized to interact with your account.
+* `w3 delegation create <did:key:...> | base64` - tells web3.storage that the client using the key you just made is authorized to interact with your account. Use only the *first* line of the key output.
 
 Save the output - both key and proof - to a .env file and save it to the project root. There is a sample `.env.example` within the sanbox code repository. The format is as follows, as found within the `.env.example` file:
 
 > KEY=SOMEKEYHERE
 
 
-The KEY value is second line of output from the `w3 key create` command.
+The KEY value is second line of output from the `w3 key create` command. It always starts with 'Mg'.
 > PROOF='SOMEMULTLINESTRINGTHATSREALLYLONGHERE'
 
- The PROOF value is the long, BASE64 output from the `w3 delegation create <did:key:...> --base64` command.
+ The PROOF value is the long, BASE64 output from the `w3 delegation create <did:key:...> | base64` command.
  
 > [!IMPORTANT] You will need to repeat this step on any device you configure to run this app.
 > The .env file should _never_ be committed to the repo. If you do, anyone with access to your repo will be able to access your W3.Storage account and access your files.
@@ -68,7 +70,7 @@ The KEY value is second line of output from the `w3 key create` command.
 The last step is to install the code itself via NPM using the NPM install command with your Teminal.
 * `npm install`
 
-There are three ways to run the sandbox. `npm run dev` is used for development with features like hot module replacement, `npm run build` is used to create an optimized production build, and `npm run start` is used to run the Next.js server in production mode after the build process is completed. For our immediate purposes, let's use the development option. Start the development server on `http://localhost:3000`:
+There are three ways to run the sandbox. `npm run dev` is used for development with features like hot module replacement, `npm run build` is used to create an optimized production build, and `npm run start` is used to run the Nuxt.js server in production mode after the build process is completed. For our immediate purposes, let's use the development option. Start the development server on `http://localhost:3000`:
 
 * `npm run dev`
 
